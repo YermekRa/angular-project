@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {PeriodicElement} from '../staff-control/staff-control.component';
 
+export interface PeriodicElement {
+  id: number;
+  birth_date: string;
+  first_name: string;
+  last_name: string;
+  level: string;
+  phone_number: string;
+  b_user_id: number;
+}
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {id: 1, birth_date: '01.01.1969', first_name: 'Наталья', last_name: 'Ивановна', level: 'Учитель высшей категории', phone_number: '8-707-123-1234', b_user_id: 1},
+  {id: 2, birth_date: '13.04.1978', first_name: 'Петр', last_name: 'Кузнецов', level: 'Учитель', phone_number: '8-708-987-9876', b_user_id: 2},
+  {id: 3, birth_date: '23.10.1988', first_name: 'Иван', last_name: 'Пивоваров', level: 'Учитель 1 категории', phone_number: '8-701-701-7101', b_user_id: 3},
+  {id: 4, birth_date: '09.09.1999', first_name: 'Лариса', last_name: 'Николаевна', level: 'Учитель 3 категории', phone_number: '8-702-456-9874', b_user_id: 4}
 ];
 
 @Component({
@@ -20,7 +22,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./teachers.component.css']
 })
 export class TeachersComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'actions'];
+  displayedColumns: string[] = ['id', 'birth_date', 'first_name', 'last_name', 'level', 'phone_number', 'b_user_id', 'actions'];
   dataSource = ELEMENT_DATA;
   constructor() { }
 

@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header card-header-danger">
-                <h3 class="card-title">Сотрудники школы №</h3>
-                <p class="card-category">Преподователи
+                <h3 class="card-title">Список учителей школы №1</h3>
+                <p class="card-category">Преподователи</p>
 
             </div>
             <div class="card-body">
@@ -13,33 +13,53 @@
                         <!--- Note that these columns can be defined in any order.
                               The actual rendered columns are set as a property on the row definition" -->
 
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="position">
-                            <th mat-header-cell *matHeaderCellDef> No.</th>
-                            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        <!-- id Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> Ид номер</th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                         </ng-container>
 
-                        <!-- Name Column -->
-                        <ng-container matColumnDef="name">
-                            <th mat-header-cell *matHeaderCellDef> Name</th>
-                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        <!-- bd Column -->
+                        <ng-container matColumnDef="birth_date">
+                            <th mat-header-cell *matHeaderCellDef> День рождения</th>
+                            <td mat-cell *matCellDef="let element"> {{element.birth_date}} </td>
                         </ng-container>
 
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="weight">
-                            <th mat-header-cell *matHeaderCellDef> Weight</th>
-                            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                        <!-- fn Column -->
+                        <ng-container matColumnDef="first_name">
+                            <th mat-header-cell *matHeaderCellDef> Имя </th>
+                            <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
                         </ng-container>
 
-                        <!-- Symbol Column -->
-                        <ng-container matColumnDef="symbol">
-                            <th mat-header-cell *matHeaderCellDef> Symbol</th>
-                            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                        <!-- ln Column -->
+                        <ng-container matColumnDef="last_name">
+                            <th mat-header-cell *matHeaderCellDef> Фамилия </th>
+                            <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
                         </ng-container>
+
+                        <!-- level Column -->
+                        <ng-container matColumnDef="level">
+                            <th mat-header-cell *matHeaderCellDef> Категория </th>
+                            <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+                        </ng-container>
+
+                        <!-- pn Column -->
+                        <ng-container matColumnDef="phone_number">
+                            <th mat-header-cell *matHeaderCellDef> Телефон </th>
+                            <td mat-cell *matCellDef="let element"> {{element.phone_number}} </td>
+                        </ng-container>
+
+                        <!-- bui Column -->
+                        <ng-container matColumnDef="b_user_id">
+                            <th mat-header-cell *matHeaderCellDef> Ид пользователя </th>
+                            <td mat-cell *matCellDef="let element"> {{element.b_user_id}} </td>
+                        </ng-container>
+
+
                         <ng-container matColumnDef="actions">
                             <th mat-header-cell *matHeaderCellDef> Actions</th>
                             <td mat-cell *matCellDef="let element">
-                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" matTooltip="Редактирование">
+                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" matTooltip="Редактировать">
                                     <i class="material-icons" >edit_calendar</i>
                                 </button>
                                 <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" matTooltip="Удалить">

@@ -17,7 +17,7 @@ import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
+
 import {
   AgmCoreModule
 } from '@agm/core';
@@ -27,10 +27,10 @@ import { StaffControlComponent } from './staff-control/staff-control.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { UsersComponent } from './users/users.component';
+import { UsersControlComponent } from './users-control/users-control.component';
 import { RolesComponent } from './roles/roles.component';
 import { TeachersComponent } from './teachers/teachers.component';
-import { StudentsComponent } from './students/students.component';
+
 
 @NgModule({
     imports: [

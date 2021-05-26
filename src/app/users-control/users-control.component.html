@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header card-header-danger">
-                <h3 class="card-title">Список доступных ролей</h3>
-                <p class="card-category">Распределити роли с умом!</p>
+                <h3 class="card-title">Пользователи</h3>
+                <p class="card-category">Просмотр, редактирование, удаление записи</p>
 
             </div>
             <div class="card-body">
@@ -13,22 +13,34 @@
                         <!--- Note that these columns can be defined in any order.
                               The actual rendered columns are set as a property on the row definition" -->
 
-                        <!-- Position Column -->
+                        <!-- id Column -->
                         <ng-container matColumnDef="id">
                             <th mat-header-cell *matHeaderCellDef> Ид номер</th>
                             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                         </ng-container>
 
-                        <!-- Name Column -->
-                        <ng-container matColumnDef="code">
-                            <th mat-header-cell *matHeaderCellDef> Код</th>
-                            <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+                        <!-- arcfl Column -->
+                        <ng-container matColumnDef="arcfl">
+                            <th mat-header-cell *matHeaderCellDef> Активация</th>
+                            <td mat-cell *matCellDef="let element"> <input type="checkbox" [checked]="element.arcfl"> </td>
                         </ng-container>
 
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="name">
-                            <th mat-header-cell *matHeaderCellDef> Наименование</th>
-                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        <!-- login Column -->
+                        <ng-container matColumnDef="login">
+                            <th mat-header-cell *matHeaderCellDef> Логин</th>
+                            <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+                        </ng-container>
+
+                        <!-- pass Column -->
+                        <ng-container matColumnDef="password">
+                            <th mat-header-cell *matHeaderCellDef> Пароль</th>
+                            <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+                        </ng-container>
+
+                        <!-- role_id Column -->
+                        <ng-container matColumnDef="role_id">
+                            <th mat-header-cell *matHeaderCellDef> Ид роли</th>
+                            <td mat-cell *matCellDef="let element"> {{element.role_id}} </td>
                         </ng-container>
 
 
@@ -38,7 +50,7 @@
                                 <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" matTooltip="Редактировать">
                                     <i class="material-icons" >edit_calendar</i>
                                 </button>
-                                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" matTooltip="Удалить">
+                                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" matTooltip="Удалить" >
                                     <i class="material-icons" >delete_outline</i>
                                 </button>
 
