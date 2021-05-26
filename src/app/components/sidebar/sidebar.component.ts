@@ -9,15 +9,18 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon: 'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon: 'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon: 'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon: 'location_on', class: '' },
-    { path: '/test', title: 'Test',  icon: 'person', class: '' },
-    { path: '/staffs', title: 'Сотрудники',  icon: 'people_alt', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon: 'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'unarchive', class: 'active-pro' },
+    { path: '/students', title: 'students',  icon: 'dashboard', class: '' },
+    { path: '/timetable', title: 'timetable',  icon: 'dashboard', class: '' },
+    { path: '/groups', title: 'groups',  icon: 'dashboard', class: '' }
+    // { path: '/user-profile', title: 'User Profile',  icon: 'person', class: '' },
+    // { path: '/table-list', title: 'Table List',  icon: 'content_paste', class: '' },
+    // { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },
+    // { path: '/icons', title: 'Icons',  icon: 'bubble_chart', class: '' },
+    // { path: '/maps', title: 'Maps',  icon: 'location_on', class: '' },
+    // { path: '/test', title: 'Test',  icon: 'person', class: '' },
+    // { path: '/staffs', title: 'Сотрудники',  icon: 'people_alt', class: '' },
+    // { path: '/notifications', title: 'Notifications',  icon: 'notifications', class: '' },
+    // { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'unarchive', class: 'active-pro' }
 ];
 
 @Component({
