@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {TestComponent} from '../../test/test.component';
 import {StaffControlComponent} from '../../staff-control/staff-control.component';
+import {StudentsComponent} from '../../students/students.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -61,7 +62,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
-    { path: 'test',  component: TestComponent },
-    { path: 'staffs',  component: StaffControlComponent },
+    { path: 'test',           component: TestComponent },
+    { path: 'staffs',         component: StaffControlComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'students',       component: StudentsComponent }
 ];

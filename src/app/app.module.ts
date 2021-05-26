@@ -27,6 +27,7 @@ import { StaffControlComponent } from './staff-control/staff-control.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { StudentsComponent } from './students/students.component';
 
 @NgModule({
     imports: [
@@ -49,6 +50,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AdminLayoutComponent,
     TestComponent,
     StaffControlComponent,
+    StudentsComponent,
 
   ],
   providers: [],
