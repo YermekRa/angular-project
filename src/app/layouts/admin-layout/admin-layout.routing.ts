@@ -70,5 +70,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'users',        component: UsersComponent },
     { path: 'roles',        component: RolesComponent },
-    { path: 'teachers',        component: TeachersComponent },
+    { path: 'teachers',        component: TeachersComponent }
 ];
