@@ -8,16 +8,16 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/users', title: 'Пользователи',  icon: 'account_circle', class: '' },
-    { path: '/roles', title: 'Роли',  icon: 'admin_panel_settings', class: '' },
-    { path: '/teachers', title: 'Учетиля',  icon: 'account_box', class: '' },
-    { path: '/students', title: 'students',  icon: 'dashboard', class: '' },
-    { path: '/timetable', title: 'timetable',  icon: 'dashboard', class: '' },
-    { path: '/groups', title: 'groups',  icon: 'dashboard', class: '' },
-    { path: '/subjects', title: 'subjects',  icon: 'dashboard', class: '' },
-    { path: '/grades', title: 'grades',  icon: 'dashboard', class: '' },
-    { path: '/rooms', title: 'rooms',  icon: 'dashboard', class: '' }
+    { path: '/dashboard', title: 'Dashboard',      icon: 'dashboard', class: '' },
+    { path: '/users',     title: 'Пользователи',   icon: 'account_circle', class: '' },
+    { path: '/roles',     title: 'Роли',           icon: 'admin_panel_settings', class: '' },
+    { path: '/teachers',  title: 'Учетиля',        icon: 'account_box', class: '' },
+    { path: '/students',  title: 'Ученики',        icon: 'face', class: '' },
+    { path: '/timetable', title: 'Расписание',     icon: 'pending_actions', class: '' },
+    { path: '/groups',    title: 'Группы(классы)', icon: 'groups', class: '' },
+    { path: '/subjects',  title: 'Предметы',       icon: 'import_contacts', class: '' },
+    { path: '/grades',    title: 'Типы оценок',    icon: 'filter_5', class: '' },
+    { path: '/rooms',     title: 'Кабинеты',       icon: 'meeting_room', class: '' }
     // { path: '/user-profile', title: 'User Profile',  icon: 'person', class: '' },
     // { path: '/table-list', title: 'Table List',  icon: 'content_paste', class: '' },
     // { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },
