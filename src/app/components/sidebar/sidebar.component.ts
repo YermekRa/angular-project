@@ -14,7 +14,10 @@ export const ROUTES: RouteInfo[] = [
     { path: '/teachers', title: 'Учетиля',  icon: 'account_box', class: '' },
     { path: '/students', title: 'students',  icon: 'dashboard', class: '' },
     { path: '/timetable', title: 'timetable',  icon: 'dashboard', class: '' },
-    { path: '/groups', title: 'groups',  icon: 'dashboard', class: '' }
+    { path: '/groups', title: 'groups',  icon: 'dashboard', class: '' },
+    { path: '/subjects', title: 'subjects',  icon: 'dashboard', class: '' },
+    { path: '/grades', title: 'grades',  icon: 'dashboard', class: '' },
+    { path: '/rooms', title: 'rooms',  icon: 'dashboard', class: '' }
     // { path: '/user-profile', title: 'User Profile',  icon: 'person', class: '' },
     // { path: '/table-list', title: 'Table List',  icon: 'content_paste', class: '' },
     // { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },
