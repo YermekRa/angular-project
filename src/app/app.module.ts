@@ -30,6 +30,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { UsersControlComponent } from './users-control/users-control.component';
 import { RolesComponent } from './roles/roles.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import {StudentsComponent} from './students/students.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { TeachersComponent } from './teachers/teachers.component';
     AdminLayoutComponent,
     TestComponent,
     StaffControlComponent,
+      StudentsComponent
 
   ],
   providers: [],

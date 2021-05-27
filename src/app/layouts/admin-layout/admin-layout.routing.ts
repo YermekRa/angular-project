@@ -12,6 +12,7 @@ import {StaffControlComponent} from '../../staff-control/staff-control.component
 import {UsersControlComponent} from '../../users-control/users-control.component';
 import {RolesComponent} from '../../roles/roles.component';
 import {TeachersComponent} from '../../teachers/teachers.component';
+import {StudentsComponent} from '../../students/students.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -69,4 +70,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'users',        component: UsersControlComponent },
     { path: 'roles',        component: RolesComponent },
     { path: 'teachers',        component: TeachersComponent },
+    { path: 'students',        component: StudentsComponent },
 ];
