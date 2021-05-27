@@ -46,7 +46,7 @@ import { StudentsComponent } from './students/students.component';
     AppComponent,
     AdminLayoutComponent,
     TestComponent,
-    StaffControlComponent, StudentsComponent,
+    StaffControlComponent, StudentsComponent, TeachersComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

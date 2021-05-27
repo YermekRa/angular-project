@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',      icon: 'dashboard', class: '' },
     { path: '/users',     title: 'Пользователи',   icon: 'account_circle', class: '' },
     { path: '/roles',     title: 'Роли',           icon: 'admin_panel_settings', class: '' },
-    { path: '/teachers',  title: 'Учетиля',        icon: 'account_box', class: '' },
+    { path: '/teachers',  title: 'Учителя',        icon: 'account_box', class: '' },
     { path: '/students',  title: 'Ученики',        icon: 'face', class: '' },
     { path: '/timetable', title: 'Расписание',     icon: 'pending_actions', class: '' },
     { path: '/groups',    title: 'Группы(классы)', icon: 'groups', class: '' },
