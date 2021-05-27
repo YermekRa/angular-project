@@ -3,6 +3,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {UserModel} from '../model/user.model';
 import {UserService} from '../service/user.service';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class UsersControlComponent implements OnInit {
     displayedColumns: string[] = ['id', 'arcfl', 'login', 'role_id', 'actions'];
     dataSource = [];
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService,
+                public dialog: MatDialog) {
     }
 
     ngOnInit(): void {
@@ -22,6 +25,15 @@ export class UsersControlComponent implements OnInit {
             console.log(res);
             this.dataSource = res;
         })
+    }
+
+    openDialog(element) {
+        console.log(element);
+        const dialogRef = this.dialog.open(DialogContentExampleDialogComponent, {data: element});
+
+        dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`);
+        });
     }
 }
 
