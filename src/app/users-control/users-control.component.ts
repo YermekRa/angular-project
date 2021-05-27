@@ -1,34 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  id: number;
-  arcfl: boolean;
-  login: string;
-  password: string;
-  role_id: number;
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, arcfl: true, login: 'ivanovn', password: '123', role_id: 2},
-  {id: 2, arcfl: false, login: 'kuznecp', password: '123', role_id: 2},
-  {id: 3, arcfl: true, login: 'pivovi', password: '123', role_id: 2},
-  {id: 4, arcfl: true, login: 'nikolla', password: '123', role_id: 2}
-];
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import {UserModel} from '../model/user.model';
+import {UserService} from '../service/user.service';
 
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users-control.component.html',
-  styleUrls: ['./users-control.component.css']
+    selector: 'app-users',
+    templateUrl: './users-control.component.html',
+    styleUrls: ['./users-control.component.css']
 })
 export class UsersControlComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'arcfl', 'login', 'password', 'role_id', 'actions'];
-  dataSource = ELEMENT_DATA;
+    displayedColumns: string[] = ['id', 'arcfl', 'login', 'role_id', 'actions'];
+    dataSource = [];
 
-  constructor() {
-  }
+    constructor(private userService: UserService) {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+        this.userService.getAllUser().subscribe(res => {
+            console.log(res);
+            this.dataSource = res;
+        })
+    }
 }
 
 

@@ -20,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import {UsersControlComponent} from '../../users-control/users-control.component';
 import {RolesComponent} from '../../roles/roles.component';
 import {TeachersComponent} from '../../teachers/teachers.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import {TeachersComponent} from '../../teachers/teachers.component';
         MatInputModule,
         MatSelectModule,
         MatTooltipModule,
-        MatTableModule
+        MatTableModule,
+        MatExpansionModule
     ],
     declarations: [
         DashboardComponent,
