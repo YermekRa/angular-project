@@ -2,66 +2,115 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header card-header-danger">
-                <h3 class="card-title">Справочник учеников школы</h3>
-<!--                <p class="card-category">Преподователи-->
+                <h3 class="card-title">Список учеников</h3>
+<!--                <p class="card-category">Преподователи</p>-->
 
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table mat-table [dataSource]="dataSource" class="table">
+                <mat-accordion>
+<!--                    <mat-expansion-panel hideToggle>-->
+<!--                        <mat-expansion-panel-header>-->
+<!--                            <mat-panel-title>-->
+<!--                                Adding new student-->
+<!--                            </mat-panel-title>-->
+<!--                            <mat-panel-description>-->
+<!--                                Student form-->
+<!--                            </mat-panel-description>-->
+<!--                        </mat-expansion-panel-header>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>userId</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingStudentModel.userId">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>firstName</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingStudentModel.firstName">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>lastName</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingStudentModel.lastName">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>classId</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingStudentModel.classId">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>level</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingStudentModel.level">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>birthdate</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingStudentModel.birthdate">-->
+<!--                        </mat-form-field>-->
+<!--                        <button mat-flat-button color="primary" (click)="addStudent()">Add</button>-->
+<!--                    </mat-expansion-panel>-->
 
-                        <!--- Note that these columns can be defined in any order.
-                              The actual rendered columns are set as a property on the row definition" -->
 
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="id">
-                            <th mat-header-cell *matHeaderCellDef> id</th>
-                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                        </ng-container>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Student list
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+<!--                        <div class="table-responsive">-->
+<!--                            <table mat-table [dataSource]="dataSource" class="table">-->
 
-                        <!-- Name Column -->
-                        <ng-container matColumnDef="user_id">
-                            <th mat-header-cell *matHeaderCellDef> user_id</th>
-                            <td mat-cell *matCellDef="let element"> {{element.user_id}} </td>
-                        </ng-container>
+<!--                                &lt;!&ndash;- Note that these columns can be defined in any order.-->
+<!--                                      The actual rendered columns are set as a property on the row definition" &ndash;&gt;-->
 
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="firstname">
-                            <th mat-header-cell *matHeaderCellDef> Имя</th>
-                            <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
-                        </ng-container>
+<!--                                &lt;!&ndash; Position Column &ndash;&gt;-->
+<!--                                <ng-container matColumnDef="id">-->
+<!--                                    <th mat-header-cell *matHeaderCellDef> id</th>-->
+<!--                                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>-->
+<!--                                </ng-container>-->
 
-                        <!-- Symbol Column -->
-                        <ng-container matColumnDef="lastname">
-                            <th mat-header-cell *matHeaderCellDef> Фамилия</th>
-                            <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
-                        </ng-container>
-                        <ng-container matColumnDef="birthdate">
-                            <th mat-header-cell *matHeaderCellDef> Дата рождения</th>
-                            <td mat-cell *matCellDef="let element"> {{element.birthdate}} </td>
-                        </ng-container>
-                        <ng-container matColumnDef="group_id">
-                            <th mat-header-cell *matHeaderCellDef> group_id</th>
-                            <td mat-cell *matCellDef="let element"> {{element.group_id}} </td>
-                        </ng-container>
-                        <ng-container matColumnDef="actions">
-                            <th mat-header-cell *matHeaderCellDef> Действия</th>
-                            <td mat-cell *matCellDef="let element">
-                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" matTooltip="Редактирование">
-                                    <i class="material-icons" >edit_calendar</i>
-                                </button>
-                                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" matTooltip="Удалить">
-                                    <i class="material-icons" >delete_outline</i>
-                                </button>
+<!--                                &lt;!&ndash; Name Column &ndash;&gt;-->
+<!--                                <ng-container matColumnDef="user_id">-->
+<!--                                    <th mat-header-cell *matHeaderCellDef> user_id</th>-->
+<!--                                    <td mat-cell *matCellDef="let element"> {{element.user_id}} </td>-->
+<!--                                </ng-container>-->
 
-                            </td>
-                        </ng-container>
+<!--                                &lt;!&ndash; Weight Column &ndash;&gt;-->
+<!--                                <ng-container matColumnDef="firstname">-->
+<!--                                    <th mat-header-cell *matHeaderCellDef> Имя</th>-->
+<!--                                    <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>-->
+<!--                                </ng-container>-->
 
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
-                </div>
+<!--                                &lt;!&ndash; Symbol Column &ndash;&gt;-->
+<!--                                <ng-container matColumnDef="lastname">-->
+<!--                                    <th mat-header-cell *matHeaderCellDef> Фамилия</th>-->
+<!--                                    <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>-->
+<!--                                </ng-container>-->
+<!--                                <ng-container matColumnDef="birthdate">-->
+<!--                                    <th mat-header-cell *matHeaderCellDef> Дата рождения</th>-->
+<!--                                    <td mat-cell *matCellDef="let element"> {{element.birthdate}} </td>-->
+<!--                                </ng-container>-->
+<!--                                <ng-container matColumnDef="group_id">-->
+<!--                                    <th mat-header-cell *matHeaderCellDef> group_id</th>-->
+<!--                                    <td mat-cell *matCellDef="let element"> {{element.group_id}} </td>-->
+<!--                                </ng-container>-->
+<!--                                <ng-container matColumnDef="actions">-->
+<!--                                    <th mat-header-cell *matHeaderCellDef> Действия</th>-->
+<!--                                    <td mat-cell *matCellDef="let element">-->
+<!--                                        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" matTooltip="Редактирование">-->
+<!--                                            <i class="material-icons" >edit_calendar</i>-->
+<!--                                        </button>-->
+<!--                                        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" matTooltip="Удалить">-->
+<!--                                            <i class="material-icons" >delete_outline</i>-->
+<!--                                        </button>-->
 
+<!--                                    </td>-->
+<!--                                </ng-container>-->
+
+<!--                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--                            </table>-->
+<!--                        </div>-->
+                    </mat-expansion-panel>
+                </mat-accordion>
 
 
             </div>
