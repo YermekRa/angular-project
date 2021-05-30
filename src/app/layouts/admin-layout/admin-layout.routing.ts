@@ -9,11 +9,12 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import {TestComponent} from '../../test/test.component';
 import {StaffControlComponent} from '../../staff-control/staff-control.component';
-import {UsersControlComponent} from '../../users-control/users-control.component';
 import {RolesComponent} from '../../roles/roles.component';
 import {TeachersComponent} from '../../teachers/teachers.component';
 import {StudentsComponent} from '../../students/students.component';
-
+import {UsersControlComponent} from '../../users-control/users-control.component';
+import {TimetableComponent} from '../../timetable/timetable.component';
+import {GroupsComponent} from '../../groups/groups.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -65,10 +66,12 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
-    { path: 'test',  component: TestComponent },
-    { path: 'staffs',  component: StaffControlComponent },
-    { path: 'users',        component: UsersControlComponent },
-    { path: 'roles',        component: RolesComponent },
-    { path: 'teachers',        component: TeachersComponent },
-    { path: 'students',        component: StudentsComponent },
+    { path: 'test',           component: TestComponent },
+    { path: 'staffs',         component: StaffControlComponent },
+    { path: 'users',          component: UsersControlComponent },
+    { path: 'roles',          component: RolesComponent },
+    { path: 'teachers',       component: TeachersComponent },
+    { path: 'students',       component: StudentsComponent },
+    { path: 'timetable',      component: TimetableComponent },
+    { path: 'groups',         component: GroupsComponent }
 ];

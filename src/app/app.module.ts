@@ -36,6 +36,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {TimetableComponent} from './timetable/timetable.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { GroupsComponent } from './groups/groups.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     StaffControlComponent,
     StudentsComponent,
     DialogContentExampleDialogComponent,
-    TimetableComponent
+    TimetableComponent,
+    GroupsComponent
 
   ],
   providers: [],
