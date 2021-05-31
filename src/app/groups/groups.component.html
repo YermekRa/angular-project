@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header card-header-danger">
-                <h3 class="card-title">Список классов (групп)</h3>
+                <h3 class="card-title">Список групп (классов)</h3>
 <!--                <p class="card-category">Преподователи</p>-->
 
             </div>
@@ -20,15 +20,14 @@
                         <mat-form-field>
                             <mat-label>code</mat-label>
                             <input matInput type="text" [(ngModel)]="addingGroupsModel.code">
-
-                        </mat-form-field>
-                        <mat-form-field>
-                            <mat-label>teacherId</mat-label>
-                            <input matInput type="text" [(ngModel)]="addingGroupsModel.teacherId">
                         </mat-form-field>
                         <mat-form-field>
                             <mat-label>roomId</mat-label>
                             <input matInput type="text" [(ngModel)]="addingGroupsModel.roomId">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>teacherId</mat-label>
+                            <input matInput type="text" [(ngModel)]="addingGroupsModel.teacherId">
                         </mat-form-field>
                         <button mat-flat-button color="primary" (click)="addGroup()">Add</button>
                     </mat-expansion-panel>
@@ -37,7 +36,7 @@
                                          (closed)="panelOpenState = false">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                                Groups list
+                                Teacher list
                             </mat-panel-title>
                             <mat-panel-description>
                                 Currently I am {{panelOpenState ? 'open' : 'closed'}}
@@ -45,32 +44,24 @@
                         </mat-expansion-panel-header>
                         <div class="table-responsive">
                             <table mat-table [dataSource]="dataSource" class="table">
-
-                                <!--- Note that these columns can be defined in any order.
-                                      The actual rendered columns are set as a property on the row definition" -->
-
-                                <!-- id Column -->
                                 <ng-container matColumnDef="id">
                                     <th mat-header-cell *matHeaderCellDef> Ид номер</th>
                                     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                                 </ng-container>
 
-                                <!-- bd Column -->
                                 <ng-container matColumnDef="code">
                                     <th mat-header-cell *matHeaderCellDef> Код </th>
                                     <td mat-cell *matCellDef="let element"> {{element.code}} </td>
                                 </ng-container>
 
-                                <!-- fn Column -->
-                                <ng-container matColumnDef="teacherId">
-                                    <th mat-header-cell *matHeaderCellDef> id учителя</th>
-                                    <td mat-cell *matCellDef="let element"> {{element.teacherId}} </td>
+                                <ng-container matColumnDef="roomId">
+                                    <th mat-header-cell *matHeaderCellDef> roomId</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.roomId}} </td>
                                 </ng-container>
 
-                                <!-- ln Column -->
-                                <ng-container matColumnDef="roomId">
-                                    <th mat-header-cell *matHeaderCellDef> id кабинета </th>
-                                    <td mat-cell *matCellDef="let element"> {{element.roomId}} </td>
+                                <ng-container matColumnDef="teacherId">
+                                    <th mat-header-cell *matHeaderCellDef> teacherId</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.teacherId}} </td>
                                 </ng-container>
 
                                 <ng-container matColumnDef="actions">
@@ -94,9 +85,8 @@
                             </table>
                         </div>
                     </mat-expansion-panel>
+
                 </mat-accordion>
-
-
             </div>
         </div>
     </div>
