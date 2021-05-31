@@ -19,7 +19,7 @@ export class GroupsComponent implements OnInit {
 
   ngOnInit(): void {
     // tslint:disable-next-line:no-unused-expression
-    this.getAllGroups;
+    this.getAllGroups();
   }
 
   addGroup() {
@@ -38,5 +38,15 @@ export class GroupsComponent implements OnInit {
       this.dataSource = res;
       console.log(this.dataSource);
     })
+  }
+
+  deleteGroup(id: number) {
+    this.groupsService.deleteGroup(id).subscribe(res => {
+      console.log(res);
+      this.dataSource = res;
+      console.log(this.dataSource);
+      this.getAllGroups();
+    });
+
   }
 }
