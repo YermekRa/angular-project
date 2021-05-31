@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../service/user.service';
 import {TeacherService} from '../service/teacher.service';
 import {TeacherModel} from '../model/teacher.model';
+import {UserModel} from '../model/user.model';
 
 
 @Component({
@@ -14,9 +15,11 @@ export class TeachersComponent implements OnInit {
     dataSource = [];
     panelOpenState = false;
     addingTeacherModel: TeacherModel;
+    addingUserModel: UserModel;
 
     constructor(private teacherService: TeacherService) {
         this.addingTeacherModel = new TeacherModel();
+        this.addingUserModel = new UserModel();
     }
 
     ngOnInit(): void {

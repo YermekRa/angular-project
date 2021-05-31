@@ -20,8 +20,15 @@
                         <mat-form-field>
                             <mat-label>firstName</mat-label>
                             <input matInput type="text" [(ngModel)]="addingTeacherModel.firstName">
-
                         </mat-form-field>
+
+                        <!-- login Column -->
+                        <mat-form-field>
+                            <mat-label>userId</mat-label>
+                            <input matInput type="text" [(ngModel)]="addingUserModel.login">
+                        </mat-form-field>
+
+
                         <mat-form-field>
                             <mat-label>lastName</mat-label>
                             <input matInput type="text" [(ngModel)]="addingTeacherModel.lastName">

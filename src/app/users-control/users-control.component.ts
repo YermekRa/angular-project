@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import {UserModel} from '../model/user.model';
+
 import {UserService} from '../service/user.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
-
+import {toNumbers} from '@angular/compiler-cli/src/diagnostics/typescript_version';
 
 @Component({
     selector: 'app-users',
@@ -14,17 +14,20 @@ import {DialogContentExampleDialogComponent} from '../dialog-content-example-dia
 })
 export class UsersControlComponent implements OnInit {
     displayedColumns: string[] = ['id', 'arcfl', 'login', 'role_id', 'actions'];
-    dataSource = [];
+    dataSource =  new MatTableDataSource([]);
+    @ViewChild(MatPaginator) paginator: MatPaginator;
 
     constructor(private userService: UserService,
                 public dialog: MatDialog) {
     }
 
     ngOnInit(): void {
+
         this.userService.getAllUser().subscribe(res => {
             console.log(res);
             this.dataSource = res;
         })
+
     }
 
     openDialog(element) {

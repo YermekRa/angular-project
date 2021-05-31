@@ -33,6 +33,7 @@ import { TeachersComponent } from './teachers/teachers.component';
 import {StudentsComponent} from './students/students.component';
 import { DialogContentExampleDialogComponent } from './dialog-content-example-dialog/dialog-content-example-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatTableModule,
         MatButtonModule,
         MatTooltipModule,
-        MatDialogModule
+        MatDialogModule,
+        MatFormFieldModule
     ],
   declarations: [
     AppComponent,

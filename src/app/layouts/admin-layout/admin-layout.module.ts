@@ -21,6 +21,7 @@ import {UsersControlComponent} from '../../users-control/users-control.component
 import {RolesComponent} from '../../roles/roles.component';
 import {TeachersComponent} from '../../teachers/teachers.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
         MatSelectModule,
         MatTooltipModule,
         MatTableModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatPaginatorModule
     ],
     declarations: [
         DashboardComponent,

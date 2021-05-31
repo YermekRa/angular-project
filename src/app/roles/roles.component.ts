@@ -1,16 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {RolesService} from '../service/roles.service';
 
-export interface PeriodicElement {
-  id: number;
-  code: string
-  name: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, code: 'ADMIN', name: 'Admin'},
-  {id: 2, code: 'TEACHER', name: 'Teacher'},
-  {id: 1, code: 'STUDENT', name: 'Student'}
-];
 
 @Component({
   selector: 'app-roles',
@@ -19,10 +11,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class RolesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'code', 'name',  'actions'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+  dataSource = [];
+  constructor(private rolesService: RolesService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.rolesService.getAllUser().subscribe(res => {
+      console.log(res);
+      this.dataSource = res;
+    })
   }
 
 }
