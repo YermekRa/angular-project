@@ -27,9 +27,6 @@ import { StaffControlComponent } from './staff-control/staff-control.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { UsersControlComponent } from './users-control/users-control.component';
-import { RolesComponent } from './roles/roles.component';
-import { TeachersComponent } from './teachers/teachers.component';
 import {StudentsComponent} from './students/students.component';
 import { DialogContentExampleDialogComponent } from './dialog-content-example-dialog/dialog-content-example-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -37,6 +34,7 @@ import {TimetableComponent} from './timetable/timetable.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { GroupsComponent } from './groups/groups.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -56,9 +54,8 @@ import { GroupsComponent } from './groups/groups.component';
         MatTooltipModule,
         MatDialogModule,
         MatFormFieldModule,
-        MatExpansionModule
-        MatDialogModule,
-        MatFormFieldModule
+        MatExpansionModule,
+        MatInputModule
     ],
   declarations: [
     AppComponent,
@@ -69,7 +66,6 @@ import { GroupsComponent } from './groups/groups.component';
     DialogContentExampleDialogComponent,
     TimetableComponent,
     GroupsComponent
-
   ],
   providers: [],
   bootstrap: [AppComponent]
