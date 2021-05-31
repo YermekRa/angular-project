@@ -1,0 +1,122 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h3 class="card-title">Расписание</h3>
+<!--                <p class="card-category">Преподователи</p>-->
+
+            </div>
+            <div class="card-body">
+                <mat-accordion>
+
+<!--                    <mat-expansion-panel hideToggle>-->
+<!--                        <mat-expansion-panel-header>-->
+<!--                            <mat-panel-title>-->
+<!--                                Adding new timetable record-->
+<!--                            </mat-panel-title>-->
+<!--&lt;!&ndash;                            <mat-panel-description>&ndash;&gt;-->
+<!--&lt;!&ndash;                                Timetable form&ndash;&gt;-->
+<!--&lt;!&ndash;                            </mat-panel-description>&ndash;&gt;-->
+<!--                        </mat-expansion-panel-header>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>subjectId</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingTimetableModel.subjectId">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>roomId</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingTimetableModel.roomId">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>teacherId</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingTimetableModel.teacherId">-->
+<!--                        </mat-form-field>-->
+<!--                        <mat-form-field>-->
+<!--                            <mat-label>classId</mat-label>-->
+<!--                            <input matInput type="text" [(ngModel)]="addingTimetableModel.classId">-->
+<!--                        </mat-form-field>-->
+
+<!--                        <button mat-flat-button color="primary" (click)="addTimetable()">Add</button>-->
+
+<!--                    </mat-expansion-panel>-->
+
+<!--  ======================  ТАБЛИЦА С ДАННЫМИ  ============================================================      -->
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Timetable list
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="table-responsive">
+                            <table mat-table [dataSource]="dataSource" class="table">
+
+                                <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+
+                                <!-- id Column -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef> Ид номер</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                                </ng-container>
+
+                                <!-- bd Column -->
+                                <ng-container matColumnDef="subjectId">
+                                    <th mat-header-cell *matHeaderCellDef>id предмета</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.subjectId}} </td>
+                                </ng-container>
+
+                                <!-- fn Column -->
+                                <ng-container matColumnDef="date">
+                                    <th mat-header-cell *matHeaderCellDef> Дата</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                                </ng-container>
+
+                                <!-- ln Column -->
+                                <ng-container matColumnDef="roomId">
+                                    <th mat-header-cell *matHeaderCellDef> id кабинета</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.roomId}} </td>
+                                </ng-container>
+
+                                <!-- level Column -->
+                                <ng-container matColumnDef="teacherId">
+                                    <th mat-header-cell *matHeaderCellDef> id учителя</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.teacherId}} </td>
+                                </ng-container>
+
+                                <!-- pn Column -->
+                                <ng-container matColumnDef="classId">
+                                    <th mat-header-cell *matHeaderCellDef> id класса (группы)</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.classId}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef> Actions</th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <button mat-icon-button
+                                                aria-label="Example icon button with a vertical three dot icon"
+                                                matTooltip="Редактировать">
+                                            <i class="material-icons">edit_calendar</i>
+                                        </button>
+                                        <button mat-icon-button color="primary"
+                                                aria-label="Example icon button with a home icon" matTooltip="Удалить">
+                                            <i class="material-icons">delete_outline</i>
+                                        </button>
+
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+
+            </div>
+        </div>
+    </div>
+</div>

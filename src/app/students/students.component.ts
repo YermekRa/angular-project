@@ -1,19 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {StudentModel} from '../model/student.model';
+import {StudentService} from '../service/student.service';
 
-export interface PeriodicElement {
-  id: number;
-  user_id: number;
-  firstname: string;
-  lastname: string;
-  birthdate: string;
-  group_id: number;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, user_id: 1, firstname: 'Вова', lastname: 'Путин', birthdate: '01.01.1971', group_id: 1},
-  {id: 2, user_id: 5, firstname: 'Джеки', lastname: 'Чан', birthdate: '01.01.1981', group_id: 1},
-  {id: 2, user_id: 7, firstname: 'Кролик', lastname: 'Роджер', birthdate: '01.01.1971', group_id: 1},
-];
 
 @Component({
   selector: 'app-students',
@@ -21,11 +9,36 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'user_id', 'firstname', 'lastname', 'birthdate', 'group_id', 'actions'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+  displayedColumns: string[] = ['id', 'userId', 'firstName', 'lastName', 'classId', 'level' , 'birthdate', 'actions'];
+  dataSource = [];
+  panelOpenState = false;
+  addingStudentModel: StudentModel;
+
+  constructor( private  studentService: StudentService) {
+    this.addingStudentModel = new StudentModel();
+  }
 
   ngOnInit(): void {
+    // tslint:disable-next-line:no-unused-expression
+    this.getAllStudent;
+  }
+
+  addStudent() {
+    console.log(this.addingStudentModel);
+    console.log(this.addingStudentModel.firstName);
+    this.studentService.createStudent(this.addingStudentModel).subscribe(res => {
+      console.log(res);
+      this.addingStudentModel = new StudentModel();
+      this.getAllStudent();
+    });
+  }
+
+  getAllStudent() {
+    this.studentService.getAllStudent().subscribe(res => {
+      console.log(res);
+      this.dataSource = res;
+      console.log(this.dataSource);
+    })
   }
 
 }
