@@ -41,4 +41,13 @@ export class StudentsComponent implements OnInit {
     })
   }
 
+  deleteStudent(id: number) {
+    this.studentService.deleteStudent(id).subscribe(res => {
+      console.log(res);
+      this.dataSource = res;
+      console.log(this.dataSource);
+      this.getAllStudent();
+    });
+  }
+
 }

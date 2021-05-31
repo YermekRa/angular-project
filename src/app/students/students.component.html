@@ -99,7 +99,9 @@
                                         <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" matTooltip="Редактирование">
                                             <i class="material-icons" >edit_calendar</i>
                                         </button>
-                                        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" matTooltip="Удалить">
+                                        <button mat-icon-button color="primary"
+                                                (click)="deleteStudent(element.id)"
+                                                aria-label="Example icon button with a home icon" matTooltip="Удалить">
                                             <i class="material-icons" >delete_outline</i>
                                         </button>
 
