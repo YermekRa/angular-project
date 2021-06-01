@@ -21,6 +21,6 @@ export class TimetableService {
     }
 
     deleteTimetable(id: number): Observable<any> {
-        return this.http.post(`${this.USER_CONTROL}/id`, id);
+        return this.http.delete(`${this.USER_CONTROL}/id/` + id);
     }
 }

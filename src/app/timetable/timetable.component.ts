@@ -38,4 +38,13 @@ export class TimetableComponent implements OnInit {
       console.log(this.dataSource);
     })
   }
+
+  deleteTimetable(id: number) {
+    this.timetableService.deleteTimetable(id).subscribe(res => {
+      console.log(res);
+      this.dataSource = res;
+      console.log(this.dataSource);
+      this.getAllTimetable();
+    });
+  }
 }
