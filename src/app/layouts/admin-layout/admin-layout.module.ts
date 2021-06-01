@@ -22,6 +22,9 @@ import {RolesComponent} from '../../roles/roles.component';
 import {TeachersComponent} from '../../teachers/teachers.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import {PageableDemoUsersComponent} from '../../pageable-demo-users/pageable-demo-users.component';
+import {DialogContentExampleDialogComponent} from '../../dialog-content-example-dialog/dialog-content-example-dialog.component';
 
 @NgModule({
     imports: [
@@ -34,6 +37,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatFormFieldModule,
         MatInputModule,
         MatSelectModule,
+        MatDialogModule,
         MatTooltipModule,
         MatTableModule,
         MatExpansionModule,
@@ -49,7 +53,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         NotificationsComponent,
         UsersControlComponent,
         RolesComponent,
-        TeachersComponent
+        TeachersComponent,
+        PageableDemoUsersComponent,
+        DialogContentExampleDialogComponent
     ]
 })
 

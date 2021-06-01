@@ -1,65 +1,37 @@
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title">Редактирование профиля</h4>
-                        <p class="card-category"></p>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="row">
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">Редактирование профиля</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field>
+            <mat-label>id</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.id" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>login</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.login" [disabled]="data.action === 'edit'">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>arcfl</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.arcfl">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>password</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.password">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>roleId</mat-label>
+            <input matInput type="number" [(ngModel)]="data.content.roleId">
+        </mat-form-field>
 
-                                <div class="col-md-3">
-                                    <mat-form-field class="example-full-width">
 
-                                        <p>Ид </p>
-                                        <input matInput placeholder="{{data.id}}  "type="text" [(ngModel)]="addingUserModel.id">
-
-                                    </mat-form-field>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <mat-form-field class="example-full-width">
-
-                                        <p>Логин </p>
-                                        <input matInput placeholder="{{data.login}}" type="text" [(ngModel)]="addingUserModel.login">
-
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-4">
-                                    <mat-form-field class="example-full-width">
-                                        <p>Активация </p>
-                                        <input matInput placeholder="{{data.arcfl}}" type="text" [(ngModel)]="addingUserModel.arcfl">
-                                    </mat-form-field>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <p>Пароль </p>
-                                        <input matInput placeholder="{{data.password}}" type="password" [(ngModel)]="addingUserModel.password">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <p>Роль </p>
-                                        <input matInput placeholder="{{data.role_id}}" type="text" [(ngModel)]="addingUserModel.role_id">
-                                    </mat-form-field>
-                                </div>
-                            </div>
-
-                            <button mat-mat-raised-button  (click)="addUser()" class="btn btn-danger " [mat-dialog-close]="true" cdkFocusInitial>Сохранить </button>
-                            <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена </button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="saveUser()" class="btn btn-danger pull-right"
+                [mat-dialog-close]="true">Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
     </div>
 </div>
-
 

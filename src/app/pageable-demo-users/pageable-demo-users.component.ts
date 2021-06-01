@@ -1,23 +1,23 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {UserService} from '../service/user.service';
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import {UserModel} from '../model/user.model';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
 
 @Component({
-    selector: 'app-users',
-    templateUrl: './users-control.component.html',
-    styleUrls: ['./users-control.component.css']
+    selector: 'app-pageable-demo-users',
+    templateUrl: './pageable-demo-users.component.html',
+    styleUrls: ['./pageable-demo-users.component.css']
 })
-export class UsersControlComponent implements OnInit {
-    displayedColumns: string[] = ['id', 'arcfl', 'login', 'role_id', 'actions'];
-    dataSource = [];
+export class PageableDemoUsersComponent implements OnInit {
+    dataSource: [];
+    displayedColumns: string[] = ['id', 'login', 'arcfl', 'actions'];
     pageableResponse: any;
     page = 0;
     size = 5;
     length: 0;
-
 
     constructor(private userService: UserService,
                 public dialog: MatDialog) {
@@ -63,12 +63,3 @@ export class UsersControlComponent implements OnInit {
 
     }
 }
-
-
-
-
-
-
-
-
-

@@ -20,7 +20,7 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit(): void {
     // tslint:disable-next-line:no-unused-expression
-    this.getAllStudent;
+    this.getAllStudent();
   }
 
   addStudent() {
