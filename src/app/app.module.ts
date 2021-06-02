@@ -38,6 +38,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {GroupsComponent} from './groups/groups.component';
 import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
         MatDialogModule,
         MatFormFieldModule,
         MatSortModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatInputModule,
+        MatPaginatorModule
     ],
     declarations: [
         AppComponent,
