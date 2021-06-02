@@ -23,4 +23,8 @@ export class TimetableService {
     deleteTimetable(id: number): Observable<any> {
         return this.http.delete(`${this.USER_CONTROL}/id/` + id);
     }
+
+    getAllTimetablePaging(page, size): Observable<any> {
+        return this.http.get(`${this.USER_CONTROL}/page/${page}/size/${size}`);
+    }
 }
