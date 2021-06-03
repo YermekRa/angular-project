@@ -4,6 +4,7 @@ import {StudentService} from '../service/student.service';
 import {PageEvent} from '@angular/material/paginator';
 import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import {EditStudentDialogComponent} from './edit-student-dialog/edit-student-dialog.component';
 
 
 @Component({
@@ -77,7 +78,7 @@ export class StudentsComponent implements OnInit {
       content: element,
       action: edit
     };
-    const dialogRef = this.dialog.open(DialogContentExampleDialogComponent,
+    const dialogRef = this.dialog.open(EditStudentDialogComponent,
         {
           data: dialodData,
           width: '600px'
