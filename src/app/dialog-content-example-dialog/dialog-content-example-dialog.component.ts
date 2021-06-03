@@ -28,7 +28,12 @@ export class DialogContentExampleDialogComponent implements OnInit {
             this.data.content = new UserModel();
             this.data.content.id = 0;
             this.title = 'Добавление профиля';
+        } else if (data.action === 'edit') {
+            if (data.content.role) {
+                this.selected = data.content.role;
+            }
         }
+
 
     }
 
@@ -46,18 +51,19 @@ export class DialogContentExampleDialogComponent implements OnInit {
         userRequestModel.arcfl = this.data.content.arcfl;
         userRequestModel.password = this.data.content.password;
         userRequestModel.roleId = this.data.content.roleId;
-
+        console.log('this.data.content.role');
+        console.log(this.data.content.role);
         this.userService.createUser(userRequestModel).subscribe(res => {
             console.log(res);
         })
     }
+
     // Выбор справочника ролей
     getRoleList() {
         this.roleService.getAllRoles().subscribe(res => {
             console.log('role list');
             console.log(res);
             this.roleList = res;
-            this.selected = this.roleList[1].id;
         });
     }
 

@@ -14,20 +14,20 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>arcfl</mat-label>
-            <input matInput type="text"  [(ngModel)]="data.content.arcfl">
+            <input matInput type="text" [(ngModel)]="data.content.arcfl">
         </mat-form-field>
         <mat-form-field>
             <mat-label>password</mat-label>
             <input matInput type="text" [(ngModel)]="data.content.password">
         </mat-form-field>
 
-<!--        Выбор справочника ролей -->
+        <!--        Выбор справочника ролей -->
         <mat-form-field>
             <mat-label>role</mat-label>
-            <mat-select [(value)]="selected">
-                <mat-option  *ngFor="let list_roles of roleList"
-                             value="{{ list_roles.id }}">
-                    {{ list_roles.name }}
+            <mat-select [(ngModel)]="data.content.roleId">
+                <mat-option *ngFor="let role of roleList"
+                            [value]=" role.id">
+                    {{ role.name }}
                 </mat-option>
             </mat-select>
 
