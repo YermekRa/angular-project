@@ -7,9 +7,11 @@ import {Observable} from 'rxjs';
 })
 export class RolesService {
     private readonly ROLES_CONTROL = '/api/private/v1/role';
+
     constructor(private http: HttpClient) {
     }
-    getAllUser(): Observable<any> {
+
+    getAllRoles(): Observable<any> {
         return this.http.get(`${this.ROLES_CONTROL}/all`);
     }
 }

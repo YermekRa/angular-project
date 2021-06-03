@@ -42,7 +42,7 @@ export class UsersControlComponent implements OnInit {
     }
 
     openDialog(element, edit: string) {
-        let dialodData = {
+        const dialodData = {
             content: element,
             action: edit
         };

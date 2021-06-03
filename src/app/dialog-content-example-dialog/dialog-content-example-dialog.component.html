@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header card-header-danger">
-        <h4 class="card-title">Редактирование профиля</h4>
+        <h4 class="card-title">{{title}}</h4>
         <p class="card-category"></p>
     </div>
     <div class="card-body">
@@ -14,19 +14,28 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>arcfl</mat-label>
-            <input matInput type="text" [(ngModel)]="data.content.arcfl">
+            <input matInput type="text"  [(ngModel)]="data.content.arcfl">
         </mat-form-field>
         <mat-form-field>
             <mat-label>password</mat-label>
             <input matInput type="text" [(ngModel)]="data.content.password">
         </mat-form-field>
+
+<!--        Выбор справочника ролей -->
         <mat-form-field>
-            <mat-label>roleId</mat-label>
-            <input matInput type="number" [(ngModel)]="data.content.roleId">
+            <mat-label>role</mat-label>
+            <mat-select [(value)]="selected">
+                <mat-option  *ngFor="let list_roles of roleList"
+                             value="{{ list_roles.id }}">
+                    {{ list_roles.name }}
+                </mat-option>
+            </mat-select>
+
         </mat-form-field>
 
 
     </div>
+
     <div class="card-footer">
         <button mat-mat-raised-button (click)="saveUser()" class="btn btn-danger pull-right"
                 [mat-dialog-close]="true">Сохранить

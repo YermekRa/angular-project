@@ -16,7 +16,7 @@ export class RolesComponent implements OnInit {
               public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.rolesService.getAllUser().subscribe(res => {
+    this.rolesService.getAllRoles().subscribe(res => {
       console.log(res);
       this.dataSource = res;
     })

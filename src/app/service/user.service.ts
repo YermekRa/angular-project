@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {TeacherModel} from '../model/teacher.model';
 import {UserModel} from '../model/user.model';
-import {PageEvent} from '@angular/material/paginator';
 
 @Injectable({
     providedIn: 'root'
