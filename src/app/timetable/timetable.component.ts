@@ -4,6 +4,7 @@ import {TimetableService} from '../service/timetable.service';
 import {MatDialog} from '@angular/material/dialog';
 import {PageEvent} from '@angular/material/paginator';
 import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {EditTimetableDialogComponent} from './edit-timetable-dialog/edit-timetable-dialog.component';
 
 @Component({
   selector: 'app-timetable',
@@ -76,7 +77,7 @@ export class TimetableComponent implements OnInit {
       content: element,
       action: edit
     };
-    const dialogRef = this.dialog.open(DialogContentExampleDialogComponent,
+    const dialogRef = this.dialog.open(EditTimetableDialogComponent,
         {
           data: dialodData,
           width: '600px'

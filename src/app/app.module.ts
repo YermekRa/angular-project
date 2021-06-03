@@ -41,6 +41,8 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { EditStudentDialogComponent } from './students/edit-student-dialog/edit-student-dialog.component';
+import { EditTimetableDialogComponent } from './timetable/edit-timetable-dialog/edit-timetable-dialog.component';
+import { EditGroupsDialogComponent } from './groups/edit-groups-dialog/edit-groups-dialog.component';
 
 
 @NgModule({
@@ -73,7 +75,9 @@ import { EditStudentDialogComponent } from './students/edit-student-dialog/edit-
         StudentsComponent,
         TimetableComponent,
         GroupsComponent,
-        EditStudentDialogComponent
+        EditStudentDialogComponent,
+        EditTimetableDialogComponent,
+        EditGroupsDialogComponent
 
 
     ],

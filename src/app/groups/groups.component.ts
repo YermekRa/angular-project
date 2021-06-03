@@ -4,6 +4,7 @@ import {GroupsService} from '../service/groups.service';
 import {MatDialog} from '@angular/material/dialog';
 import {PageEvent} from '@angular/material/paginator';
 import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {EditGroupsDialogComponent} from './edit-groups-dialog/edit-groups-dialog.component';
 
 @Component({
   selector: 'app-groups',
@@ -78,7 +79,7 @@ export class GroupsComponent implements OnInit {
       content: element,
       action: edit
     };
-    const dialogRef = this.dialog.open(DialogContentExampleDialogComponent,
+    const dialogRef = this.dialog.open(EditGroupsDialogComponent,
         {
           data: dialodData,
           width: '600px'
