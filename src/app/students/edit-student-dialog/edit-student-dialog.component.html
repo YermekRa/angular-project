@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">Редактирование профиля</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field>
+            <mat-label>id</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.id" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>userId</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.userId" [disabled]="data.action === 'edit'">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>firstName</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>lastName</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.lastName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>level</mat-label>
+            <input matInput type="number" [(ngModel)]="data.content.level">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>classId</mat-label>
+            <input matInput type="number" [(ngModel)]="data.content.classId">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>birthdate</mat-label>
+            <input matInput type="number" [(ngModel)]="data.content.birthdate">
+        </mat-form-field>
+
+
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="saveStudent()" class="btn btn-danger pull-right"
+                [mat-dialog-close]="true">Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+</div>
+
