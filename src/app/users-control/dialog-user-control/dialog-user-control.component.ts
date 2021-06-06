@@ -1,17 +1,15 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {UserModel} from '../model/user.model';
-import {UserService} from '../service/user.service';
-import {PageEvent} from '@angular/material/paginator';
-import {RolesModel} from '../model/roles.model';
-import {RolesService} from '../service/roles.service';
+import {UserModel} from '../../model/user.model';
+import {UserService} from '../../service/user.service';
+import {RolesService} from '../../service/roles.service';
 
 @Component({
     selector: 'app-dialog-content-example-dialog',
-    templateUrl: './dialog-content-example-dialog.component.html',
-    styleUrls: ['./dialog-content-example-dialog.component.css']
+    templateUrl: './dialog-user-control.component.html',
+    styleUrls: ['./dialog-user-control.component.css']
 })
-export class DialogContentExampleDialogComponent implements OnInit {
+export class DialogUserControlComponent implements OnInit {
     dataSource = [];
     roleList = [];
     selected;

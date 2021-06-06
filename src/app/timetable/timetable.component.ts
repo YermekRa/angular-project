@@ -3,7 +3,7 @@ import {TimetableModel} from '../model/timetable.model';
 import {TimetableService} from '../service/timetable.service';
 import {MatDialog} from '@angular/material/dialog';
 import {PageEvent} from '@angular/material/paginator';
-import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {DialogUserControlComponent} from '../users-control/dialog-user-control/dialog-user-control.component';
 import {EditTimetableDialogComponent} from './edit-timetable-dialog/edit-timetable-dialog.component';
 
 @Component({

@@ -31,7 +31,7 @@ import {UsersControlComponent} from './users-control/users-control.component';
 import {RolesComponent} from './roles/roles.component';
 import {TeachersComponent} from './teachers/teachers.component';
 import {StudentsComponent} from './students/students.component';
-import {DialogContentExampleDialogComponent} from './dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {DialogUserControlComponent} from './users-control/dialog-user-control/dialog-user-control.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {TimetableComponent} from './timetable/timetable.component';
 import {MatFormFieldModule} from '@angular/material/form-field';

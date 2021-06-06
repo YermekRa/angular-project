@@ -4,7 +4,7 @@ import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {UserModel} from '../model/user.model';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {DialogUserControlComponent} from '../users-control/dialog-user-control/dialog-user-control.component';
 
 @Component({
     selector: 'app-pageable-demo-users',
@@ -46,7 +46,7 @@ export class PageableDemoUsersComponent implements OnInit {
             content: element,
             action: edit
         };
-        const dialogRef = this.dialog.open(DialogContentExampleDialogComponent,
+        const dialogRef = this.dialog.open(DialogUserControlComponent,
             {
                 data: dialodData,
                 width: '600px'

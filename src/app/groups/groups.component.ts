@@ -3,7 +3,7 @@ import {GroupsModel} from '../model/groups.model';
 import {GroupsService} from '../service/groups.service';
 import {MatDialog} from '@angular/material/dialog';
 import {PageEvent} from '@angular/material/paginator';
-import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {DialogUserControlComponent} from '../users-control/dialog-user-control/dialog-user-control.component';
 import {EditGroupsDialogComponent} from './edit-groups-dialog/edit-groups-dialog.component';
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {StudentModel} from '../model/student.model';
 import {StudentService} from '../service/student.service';
 import {PageEvent} from '@angular/material/paginator';
-import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {DialogUserControlComponent} from '../users-control/dialog-user-control/dialog-user-control.component';
 import {MatDialog} from '@angular/material/dialog';
 import {EditStudentDialogComponent} from './edit-student-dialog/edit-student-dialog.component';
 
