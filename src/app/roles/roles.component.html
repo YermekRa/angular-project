@@ -4,6 +4,9 @@
             <div class="card-header card-header-danger">
                 <h3 class="card-title">Список доступных ролей</h3>
                 <p class="card-category">Распределити роли с умом!</p>
+                <button mat-icon-button  (click)="openDialog(null, 'add')">
+                    <i class=" mat-raised-button">Добавить роль</i>
+                </button>
 
             </div>
             <div class="card-body">
@@ -35,11 +38,13 @@
                         <ng-container matColumnDef="actions">
                             <th mat-header-cell *matHeaderCellDef> Actions</th>
                             <td mat-cell *matCellDef="let element">
-                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" matTooltip="Редактировать">
-                                    <i class="material-icons" >edit_calendar</i>
+                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"
+                                        matTooltip="Редактировать" (click)="openDialog(element, 'edit')">
+                                    <i class="material-icons">edit_calendar</i>
                                 </button>
-                                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" matTooltip="Удалить">
-                                    <i class="material-icons" >delete_outline</i>
+                                <button mat-icon-button color="primary" (click)="deleteRole(element.id)"
+                                        aria-label="Example icon button with a home icon" matTooltip="Удалить">
+                                    <i class="material-icons">delete_outline</i>
                                 </button>
 
                             </td>

@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">{{title}}</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field>
+            <mat-label>id</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.id" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>code</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.code" >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>name</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.name">
+        </mat-form-field>
+
+
+
+    </div>
+
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="saveRole()" class="btn btn-danger pull-right"
+                [mat-dialog-close]="true">Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+</div>
+

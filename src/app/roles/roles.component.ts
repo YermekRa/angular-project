@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {RolesService} from '../service/roles.service';
+import {DialogRolesComponent} from './dialog-roles/dialog-roles.component';
 
 
 
@@ -20,6 +21,31 @@ export class RolesComponent implements OnInit {
       console.log(res);
       this.dataSource = res;
     })
+  }
+
+  openDialog(element, edit: string) {
+    const dialodData = {
+      content: element,
+      action: edit
+    };
+    const dialogRef = this.dialog.open(DialogRolesComponent,
+        {
+          data: dialodData,
+          width: '600px'
+        });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.rolesService.getAllRoles().subscribe(res => {
+        console.log(res);
+        this.dataSource = res;
+      })
+    });
+
+  }
+
+  deleteRole(id) {
+
   }
 
 }

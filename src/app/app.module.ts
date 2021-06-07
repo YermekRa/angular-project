@@ -43,6 +43,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { EditStudentDialogComponent } from './students/edit-student-dialog/edit-student-dialog.component';
 import { EditTimetableDialogComponent } from './timetable/edit-timetable-dialog/edit-timetable-dialog.component';
 import { EditGroupsDialogComponent } from './groups/edit-groups-dialog/edit-groups-dialog.component';
+import { DialogRolesComponent } from './roles/dialog-roles/dialog-roles.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { EditGroupsDialogComponent } from './groups/edit-groups-dialog/edit-grou
         GroupsComponent,
         EditStudentDialogComponent,
         EditTimetableDialogComponent,
-        EditGroupsDialogComponent
+        EditGroupsDialogComponent,
+        DialogRolesComponent
 
 
     ],
