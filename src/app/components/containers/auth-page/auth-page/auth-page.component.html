@@ -1,0 +1,24 @@
+
+<div class="form-wraper">
+    <div class="form-container card">
+        <div class="form-header">
+            <h3 class="form-title">Good Morning, User</h3>
+        </div>
+
+        <div class="form-body">
+            <mat-form-field class="justifier">
+                <input matInput placeholder="Email" type="text"  [(ngModel)]="authCred.login">
+            </mat-form-field>
+            <mat-form-field class="justifier">
+                <input matInput placeholder="Password" type="password" class="form-input" [(ngModel)]="authCred.password">
+            </mat-form-field>
+        </div>
+
+        <div class="form-footer">
+            <button mat-raised-button class="btn custom-btn" (click)="sendLoginForm()">
+                <mat-icon></mat-icon> LOGIN
+            </button>
+        </div>
+
+    </div>
+</div>

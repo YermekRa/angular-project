@@ -43,4 +43,7 @@ export class TeachersComponent implements OnInit {
             console.log(this.dataSource);
         })
     }
+    deleteTeacherById(id) {
+
+    }
 }

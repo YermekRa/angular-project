@@ -102,12 +102,11 @@
                                 <ng-container matColumnDef="actions">
                                     <th mat-header-cell *matHeaderCellDef> Actions</th>
                                     <td mat-cell *matCellDef="let element">
-                                        <button mat-icon-button
-                                                aria-label="Example icon button with a vertical three dot icon"
-                                                matTooltip="Редактировать">
+                                        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"
+                                              matTooltip="Редактировать" >  <!-- (click)="openDialog(element, 'edit')">-->
                                             <i class="material-icons">edit_calendar</i>
                                         </button>
-                                        <button mat-icon-button color="primary"
+                                        <button mat-icon-button color="primary" (click)="deleteTeacherById(element.id)"
                                                 aria-label="Example icon button with a home icon" matTooltip="Удалить">
                                             <i class="material-icons">delete_outline</i>
                                         </button>
