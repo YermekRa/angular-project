@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator, PageEvent} from '@angular/material/paginator';
+import {PageEvent} from '@angular/material/paginator';
 import {UserService} from '../service/user.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogUserControlComponent} from './dialog-user-control/dialog-user-control.component';
@@ -59,16 +58,14 @@ export class UsersControlComponent implements OnInit {
 
     }
 
-    deleteUser(id) {
-
+    deleteUserById(id: number) {
+        this.userService.deleteUserById(id).subscribe(res => {
+            console.log(res);
+            this.dataSource = res;
+            this.getAllUsersByPage();
+        });
     }
+
 }
-
-
-
-
-
-
-
 
 

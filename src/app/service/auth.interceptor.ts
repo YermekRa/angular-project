@@ -29,6 +29,7 @@ export class AuthInterceptor implements HttpInterceptor {
         const hanlder: Observable<any> = next.handle(token ? cloneReq : req).pipe(shareReplay());
 
         hanlder.toPromise().then().catch(event => {
+            console.log(event.status);
             if (event instanceof HttpErrorResponse && (event.status === 401 || event.status === 403)) {
                 this.authService.signOut();
                 this.router.navigate([this.router.routerState]).then();

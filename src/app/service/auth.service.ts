@@ -3,18 +3,15 @@ import {Observable, of} from 'rxjs';
 
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {routes} from '../const/routes';
 
-class User {
-    name: string;
-    lastName: string;
-}
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
     private readonly AUTH_ENDPOINT = '/auth';
-    // public routers: typeof this.routes = routes;
+    public routers: typeof routes = routes;
 
     constructor(private http: HttpClient,
                 private router: Router) {
@@ -23,10 +20,12 @@ export class AuthService {
     public login(authCred): void {
         this.http.post(this.AUTH_ENDPOINT, authCred, {observe: 'response'}).subscribe(res => {
             console.log(res.status);
+
             console.log(res.headers.get('Authorization'));
             if (res.status === 200) {
+                console.log('TUT');
                 localStorage.setItem('token', res.headers.get('Authorization'));
-                this.router.navigate([this.router.routerState]).then();
+                this.router.navigate([this.routers.DASHBOARD]).then();
             }
 
         });
@@ -41,10 +40,4 @@ export class AuthService {
         localStorage.removeItem('token');
     }
 
-    public getUser(): Observable<User> {
-        return of({
-            name: 'John',
-            lastName: 'Smith'
-        });
-    }
 }

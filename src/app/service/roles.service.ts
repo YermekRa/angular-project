@@ -20,4 +20,7 @@ export class RolesService {
         return this.http.post(`${this.ROLES_CONTROL}`, roleModel);
     }
 
+    deleteRoleById(id: number): Observable<any> {
+        return this.http.delete(`${this.ROLES_CONTROL}/id/` + id);
+    }
 }

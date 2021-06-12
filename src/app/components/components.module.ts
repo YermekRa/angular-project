@@ -9,6 +9,9 @@ import { AuthPageComponent } from './containers/auth-page/auth-page/auth-page.co
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     imports: [
@@ -17,6 +20,9 @@ import {FormsModule} from '@angular/forms';
         MatExpansionModule,
         MatFormFieldModule,
         FormsModule,
+        MatIconModule,
+        MatInputModule,
+        MatButtonModule,
     ],
   declarations: [
     FooterComponent,

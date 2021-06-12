@@ -20,6 +20,10 @@ export class UserService {
         return this.http.post(`${this.USER_CONTROL}`, userModel);
     }
 
+    deleteUserById(id: number): Observable<any> {
+        return this.http.delete(`${this.USER_CONTROL}/id/` + id);
+    }
+
     getAllUserPaging(page, size): Observable<any> {
         return this.http.get(`${this.USER_CONTROL}/page/${page}/size/${size}`);
     }

@@ -19,4 +19,12 @@ export class TeacherService {
     createTeacher(teacherModel: TeacherModel): Observable<any> {
         return this.http.post(`${this.USER_CONTROL}`, teacherModel);
     }
+
+    getAllTeacherPaging(page, size): Observable<any> {
+        return this.http.get(`${this.USER_CONTROL}/page/${page}/size/${size}`);
+    }
+
+    deleteTeacherById(id: number): Observable<any> {
+        return this.http.delete(`${this.USER_CONTROL}/id/` + id);
+    }
 }

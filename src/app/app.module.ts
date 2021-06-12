@@ -1,7 +1,7 @@
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 
 
@@ -44,6 +44,8 @@ import { EditStudentDialogComponent } from './students/edit-student-dialog/edit-
 import { EditTimetableDialogComponent } from './timetable/edit-timetable-dialog/edit-timetable-dialog.component';
 import { EditGroupsDialogComponent } from './groups/edit-groups-dialog/edit-groups-dialog.component';
 import { DialogRolesComponent } from './roles/dialog-roles/dialog-roles.component';
+import {AuthPageComponent} from './components/containers/auth-page/auth-page/auth-page.component';
+import {AuthInterceptor} from './service/auth.interceptor';
 
 
 @NgModule({
@@ -80,10 +82,12 @@ import { DialogRolesComponent } from './roles/dialog-roles/dialog-roles.componen
         EditTimetableDialogComponent,
         EditGroupsDialogComponent,
         DialogRolesComponent
-
-
     ],
-    providers: [],
+    providers: [  {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule {

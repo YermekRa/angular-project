@@ -9,7 +9,6 @@ import {AuthService} from '../../../../service/auth.service';
   styleUrls: ['./auth-page.component.scss']
 })
 export class AuthPageComponent {
-  public todayDate: Date = new Date();
   public authCred = {
     login: 'admin',
     password: 'admin'

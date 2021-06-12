@@ -3,6 +3,7 @@ import {UserService} from '../service/user.service';
 import {TeacherService} from '../service/teacher.service';
 import {TeacherModel} from '../model/teacher.model';
 import {UserModel} from '../model/user.model';
+import {PageEvent} from '@angular/material/paginator';
 
 
 @Component({
@@ -16,6 +17,10 @@ export class TeachersComponent implements OnInit {
     panelOpenState = false;
     addingTeacherModel: TeacherModel;
     addingUserModel: UserModel;
+    pageableResponse: any;
+    page = 0;
+    size = 5;
+    length: 0;
 
     constructor(private teacherService: TeacherService) {
         this.addingTeacherModel = new TeacherModel();
@@ -23,7 +28,7 @@ export class TeachersComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getAllTeachers();
+        this.getAllTeacherByPage();
     }
 
     addTeacher() {
@@ -43,7 +48,27 @@ export class TeachersComponent implements OnInit {
             console.log(this.dataSource);
         })
     }
-    deleteTeacherById(id) {
 
+    deleteTeacherById(id: number) {
+        this.teacherService.deleteTeacherById(id).subscribe(res => {
+            console.log(res);
+            this.dataSource = res;
+            console.log(this.dataSource);
+            this.getAllTeacherByPage();
+        });
+    }
+
+    getAllTeacherByPage() {
+        this.teacherService.getAllTeacherPaging(this.page, this.size).subscribe(res => {
+            this.pageableResponse = res;
+            this.dataSource = res.content;
+            this.length = res.totalElements;
+        })
+    }
+
+    public getServerData(event?: PageEvent) {
+        this.page = event.pageIndex;
+        this.size = event.pageSize;
+        this.getAllTeacherByPage();
     }
 }
