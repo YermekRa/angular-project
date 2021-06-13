@@ -4,132 +4,86 @@
             <div class="card-header card-header-danger">
                 <h3 class="card-title">Список учителей школы №1</h3>
                 <p class="card-category">Преподователи</p>
-
+                <button mat-icon-button  (click)="openDialog(null, 'add')">
+                    <i class=" mat-raised-button">Добавить пользователя</i>
+                </button>
             </div>
             <div class="card-body">
-                <mat-accordion>
-                    <mat-expansion-panel hideToggle>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Adding new teacher
-                            </mat-panel-title>
-                            <mat-panel-description>
-                                Teacher form
-                            </mat-panel-description>
-                        </mat-expansion-panel-header>
-                        <mat-form-field>
-                            <mat-label>firstName</mat-label>
-                            <input matInput type="text" [(ngModel)]="addingTeacherModel.firstName">
-                        </mat-form-field>
+                <div class="table-responsive">
+                    <table mat-table [dataSource]="dataSource" class="table">
 
-                        <!-- login Column -->
-                        <mat-form-field>
-                            <mat-label>userId</mat-label>
-                            <input matInput type="text" [(ngModel)]="addingUserModel.login">
-                        </mat-form-field>
+                        <!--- Note that these columns can be defined in any order.
+                              The actual rendered columns are set as a property on the row definition" -->
 
+                        <!-- id Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> Ид номер</th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
 
-                        <mat-form-field>
-                            <mat-label>lastName</mat-label>
-                            <input matInput type="text" [(ngModel)]="addingTeacherModel.lastName">
-                        </mat-form-field>
-                        <mat-form-field>
-                            <mat-label>phoneNumber</mat-label>
-                            <input matInput type="text" [(ngModel)]="addingTeacherModel.phoneNumber">
-                        </mat-form-field>
-                        <button mat-flat-button color="primary" (click)="addTeacher()">Add</button>
+                        <!-- bd Column -->
+                        <ng-container matColumnDef="userId">
+                            <th mat-header-cell *matHeaderCellDef> Логин </th>
+                            <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+                        </ng-container>
 
-                    </mat-expansion-panel>
-                    <mat-expansion-panel (opened)="panelOpenState = true"
-                                         (closed)="panelOpenState = false">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Teacher list
-                            </mat-panel-title>
-                            <mat-panel-description>
-                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                            </mat-panel-description>
-                        </mat-expansion-panel-header>
-                        <div class="table-responsive">
-                            <table mat-table [dataSource]="dataSource" class="table">
+                        <!-- fn Column -->
+                        <ng-container matColumnDef="firstName">
+                            <th mat-header-cell *matHeaderCellDef> Имя</th>
+                            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+                        </ng-container>
 
-                                <!--- Note that these columns can be defined in any order.
-                                      The actual rendered columns are set as a property on the row definition" -->
+                        <!-- ln Column -->
+                        <ng-container matColumnDef="lastName">
+                            <th mat-header-cell *matHeaderCellDef> Фамилия</th>
+                            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                        </ng-container>
 
-                                <!-- id Column -->
-                                <ng-container matColumnDef="id">
-                                    <th mat-header-cell *matHeaderCellDef> Ид номер</th>
-                                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                                </ng-container>
+                        <!-- level Column -->
+                        <ng-container matColumnDef="level">
+                            <th mat-header-cell *matHeaderCellDef> Категория</th>
+                            <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+                        </ng-container>
 
-                                <!-- bd Column -->
-                                <ng-container matColumnDef="userId">
-                                    <th mat-header-cell *matHeaderCellDef></th>
-                                    <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
-                                </ng-container>
+                        <!-- pn Column -->
+                        <ng-container matColumnDef="phoneNumber">
+                            <th mat-header-cell *matHeaderCellDef> Телефон</th>
+                            <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                        </ng-container>
 
-                                <!-- fn Column -->
-                                <ng-container matColumnDef="firstName">
-                                    <th mat-header-cell *matHeaderCellDef> Имя</th>
-                                    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
-                                </ng-container>
-
-                                <!-- ln Column -->
-                                <ng-container matColumnDef="lastName">
-                                    <th mat-header-cell *matHeaderCellDef> Фамилия</th>
-                                    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
-                                </ng-container>
-
-                                <!-- level Column -->
-                                <ng-container matColumnDef="level">
-                                    <th mat-header-cell *matHeaderCellDef> Категория</th>
-                                    <td mat-cell *matCellDef="let element"> {{element.level}} </td>
-                                </ng-container>
-
-                                <!-- pn Column -->
-                                <ng-container matColumnDef="phoneNumber">
-                                    <th mat-header-cell *matHeaderCellDef> Телефон</th>
-                                    <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
-                                </ng-container>
-
-                                <!-- bui Column -->
-                                <ng-container matColumnDef="birthdate">
-                                    <th mat-header-cell *matHeaderCellDef> Дата рождения</th>
-                                    <td mat-cell *matCellDef="let element"> {{element.birthdate}} </td>
-                                </ng-container>
+                        <!-- bui Column -->
+                        <ng-container matColumnDef="birthdate">
+                            <th mat-header-cell *matHeaderCellDef> Дата рождения</th>
+                            <td mat-cell *matCellDef="let element"> {{element.birthdate}} </td>
+                        </ng-container>
 
 
-                                <ng-container matColumnDef="actions">
-                                    <th mat-header-cell *matHeaderCellDef> Actions</th>
-                                    <td mat-cell *matCellDef="let element">
-                                        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"
-                                              matTooltip="Редактировать" >  <!-- (click)="openDialog(element, 'edit')">-->
-                                            <i class="material-icons">edit_calendar</i>
-                                        </button>
-                                        <button mat-icon-button color="primary" (click)="deleteTeacherById(element.id)"
-                                                aria-label="Example icon button with a home icon" matTooltip="Удалить">
-                                            <i class="material-icons">delete_outline</i>
-                                        </button>
+                        <ng-container matColumnDef="actions">
+                            <th mat-header-cell *matHeaderCellDef> Actions</th>
+                            <td mat-cell *matCellDef="let element">
+                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"
+                                        matTooltip="Редактировать" (click)="openDialog(element, 'edit')">
+                                    <i class="material-icons">edit_calendar</i>
+                                </button>
+                                <button mat-icon-button color="primary" (click)="deleteTeacherById(element.id)"
+                                        aria-label="Example icon button with a home icon" matTooltip="Удалить">
+                                    <i class="material-icons">delete_outline</i>
+                                </button>
 
-                                    </td>
-                                </ng-container>
+                            </td>
+                        </ng-container>
 
-                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                            </table>
-                            <mat-paginator  #paginator
-                                            [length]="length"
-                                            [pageIndex]="page"
-                                            [pageSize]="size"
-                                            [pageSizeOptions]="[5, 10, 25, 100]"
-                                            (page)="pageEvent = getServerData($event)"
-                            ></mat-paginator>
-                        </div>
-                    </mat-expansion-panel>
-
-
-                </mat-accordion>
-
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator #paginator
+                                   [length]="length"
+                                   [pageIndex]="page"
+                                   [pageSize]="size"
+                                   [pageSizeOptions]="[5, 10, 25, 100]"
+                                   (page)="pageEvent = getServerData($event)"
+                    ></mat-paginator>
+                </div>
 
             </div>
         </div>

@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">{{title}}</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field>
+            <mat-label>Ид.</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.id" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>День рождения</mat-label>
+            <input matInput type="date" [(ngModel)]="data.content.birthdate">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Имя</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Фамилия</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.lastName">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Категория</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.level">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Телефон</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.phoneNumber">
+        </mat-form-field>
+
+        <!--        Выбор справочника login -->
+        <mat-form-field>
+            <mat-label>Login</mat-label>
+            <mat-select [(ngModel)]="data.content.userId">
+                <mat-option *ngFor="let userl of userList"
+                            [value]=" userl.id">
+                    {{ userl.login }}
+                </mat-option>
+            </mat-select>
+
+        </mat-form-field>
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="saveTeacher()" class="btn btn-danger pull-right"
+                [mat-dialog-close]="true">Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+    </div>
+

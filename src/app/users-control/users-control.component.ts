@@ -55,7 +55,6 @@ export class UsersControlComponent implements OnInit {
             console.log(`Dialog result: ${result}`);
             this.getAllUsersByPage();
         });
-
     }
 
     deleteUserById(id: number) {

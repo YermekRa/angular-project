@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../service/user.service';
 import {TeacherService} from '../service/teacher.service';
-import {TeacherModel} from '../model/teacher.model';
-import {UserModel} from '../model/user.model';
 import {PageEvent} from '@angular/material/paginator';
+import {DialogTeacherComponent} from './dialog-teacher/dialog-teacher.component';
+import {MatDialog} from '@angular/material/dialog';
+import {TeacherModel} from '../model/teacher.model';
 
 
 @Component({
@@ -14,48 +14,18 @@ import {PageEvent} from '@angular/material/paginator';
 export class TeachersComponent implements OnInit {
     displayedColumns: string[] = ['id', 'userId', 'firstName', 'lastName', 'phoneNumber', 'level', 'birthdate', 'actions'];
     dataSource = [];
-    panelOpenState = false;
-    addingTeacherModel: TeacherModel;
-    addingUserModel: UserModel;
     pageableResponse: any;
     page = 0;
     size = 5;
     length: 0;
 
-    constructor(private teacherService: TeacherService) {
-        this.addingTeacherModel = new TeacherModel();
-        this.addingUserModel = new UserModel();
+    constructor(private teacherService: TeacherService,
+                public dialog: MatDialog) {
+
     }
 
     ngOnInit(): void {
         this.getAllTeacherByPage();
-    }
-
-    addTeacher() {
-        console.log(this.addingTeacherModel);
-        console.log(this.addingTeacherModel.firstName);
-        this.teacherService.createTeacher(this.addingTeacherModel).subscribe(res => {
-            console.log(res);
-            this.addingTeacherModel = new TeacherModel();
-            this.getAllTeachers();
-        });
-    }
-
-    getAllTeachers() {
-        this.teacherService.getAllUser().subscribe(res => {
-            console.log(res);
-            this.dataSource = res;
-            console.log(this.dataSource);
-        })
-    }
-
-    deleteTeacherById(id: number) {
-        this.teacherService.deleteTeacherById(id).subscribe(res => {
-            console.log(res);
-            this.dataSource = res;
-            console.log(this.dataSource);
-            this.getAllTeacherByPage();
-        });
     }
 
     getAllTeacherByPage() {
@@ -71,4 +41,31 @@ export class TeachersComponent implements OnInit {
         this.size = event.pageSize;
         this.getAllTeacherByPage();
     }
+
+    openDialog(element, edit: string) {
+        const dialodData = {
+            content: element,
+            action: edit
+        };
+        const dialogRef = this.dialog.open(DialogTeacherComponent,
+            {
+                data: dialodData,
+                width: '600px'
+            });
+
+        dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`);
+            this.getAllTeacherByPage();
+        });
+    }
+
+    deleteTeacherById(id: number) {
+        this.teacherService.deleteTeacherById(id).subscribe(res => {
+            console.log(res);
+            this.dataSource = res;
+            console.log(this.dataSource);
+            this.getAllTeacherByPage();
+        });
+    }
+
 }

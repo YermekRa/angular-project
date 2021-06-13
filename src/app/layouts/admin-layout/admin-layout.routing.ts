@@ -75,5 +75,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'students',       component: StudentsComponent },
     { path: 'timetable',      component: TimetableComponent },
     { path: 'demo-pageable',      component: PageableDemoUsersComponent },
-    { path: 'groups',         component: GroupsComponent }
+    { path: 'groups',         component: GroupsComponent },
 ];

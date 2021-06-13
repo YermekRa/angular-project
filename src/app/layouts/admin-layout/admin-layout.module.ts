@@ -25,6 +25,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import {PageableDemoUsersComponent} from '../../pageable-demo-users/pageable-demo-users.component';
 import {DialogUserControlComponent} from '../../users-control/dialog-user-control/dialog-user-control.component';
+import {DialogTeacherComponent} from '../../teachers/dialog-teacher/dialog-teacher.component';
 
 @NgModule({
     imports: [
@@ -55,7 +56,8 @@ import {DialogUserControlComponent} from '../../users-control/dialog-user-contro
         RolesComponent,
         TeachersComponent,
         PageableDemoUsersComponent,
-        DialogUserControlComponent
+        DialogUserControlComponent,
+        DialogTeacherComponent
     ]
 })
 
