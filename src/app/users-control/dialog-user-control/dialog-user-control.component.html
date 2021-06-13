@@ -12,10 +12,16 @@
             <mat-label>login</mat-label>
             <input matInput type="text" [(ngModel)]="data.content.login" [disabled]="data.action === 'edit'">
         </mat-form-field>
-        <mat-form-field>
-            <mat-label>arcfl</mat-label>
-            <input matInput type="text" [(ngModel)]="data.content.arcfl">
+
+        <mat-form-field >
+            <mat-label>Активация</mat-label>
+            <mat-select  required [(ngModel)]="data.content.arcfl">
+                <mat-option [value]="1">Enable</mat-option>
+                <mat-option [value]="0">Disable</mat-option>
+            </mat-select>
+<!--            <mat-checkbox  [(ngModel)]="data.content.arcfl" name="myModel"></mat-checkbox>-->
         </mat-form-field>
+
         <mat-form-field>
             <mat-label>password</mat-label>
             <input matInput type="text" [(ngModel)]="data.content.password">

@@ -44,6 +44,7 @@ export class DialogRolesComponent implements OnInit {
     console.log(this.data.content.name);
     this.roleService.createRole(roleRequestModel).subscribe(res => {
       console.log(res);
+      this.roleService.getAllRoles();
     })
   }
 

@@ -4,11 +4,13 @@ import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {shareReplay} from 'rxjs/operators';
 import {AuthService} from './auth.service';
+import {routes} from '../const/routes';
+import {AuthPageComponent} from '../components/containers/auth-page/auth-page/auth-page.component';
 
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-
+    public routers: typeof routes = routes;
     constructor(
         private router: Router,
         private authService: AuthService
@@ -32,7 +34,7 @@ export class AuthInterceptor implements HttpInterceptor {
             console.log(event.status);
             if (event instanceof HttpErrorResponse && (event.status === 401 || event.status === 403)) {
                 this.authService.signOut();
-                this.router.navigate([this.router.routerState]).then();
+                this.router.navigate([this.authService.routers.LOGIN]).then();
             }
         });
 

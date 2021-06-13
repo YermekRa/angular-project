@@ -31,15 +31,11 @@ export class DialogUserControlComponent implements OnInit {
                 this.selected = data.content.role;
             }
         }
-
-
     }
 
     ngOnInit(): void {
         console.log('input data:', this.data);
         this.getRoleList();
-
-
     }
 
     saveUser() {
