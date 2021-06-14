@@ -1,0 +1,72 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">Редактирование кабинета</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field >
+            <mat-label>Номер кабинета</mat-label>
+            <input matInput type="text" [(ngModel)]="data.code">
+
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Наименование</mat-label>
+            <input matInput type="text" [(ngModel)]="data.name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Этаж</mat-label>
+            <input matInput type="text" [(ngModel)]="data.floor">
+        </mat-form-field>
+
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="saveRoom()" class="btn btn-danger pull-right"
+                [mat-dialog-close]="true">Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+</div>
+
+
+
+<!--
+<div>
+
+    <mat-form-field >
+        <p>Номер кабинета </p>
+        <mat-label>Code</mat-label>
+        <input matInput type="text" [(ngModel)]="data.code">
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <p>Наименование</p>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [(ngModel)]="data.name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <p>Этаж</p>
+        <mat-label>Floor</mat-label>
+        <input matInput type="text" [(ngModel)]="data.floor">
+    </mat-form-field>
+
+    <button mat-icon-button color="primary"
+            matTooltip="Редактировать"
+            (click)="saveRoom()" >
+
+        <mat-icon color="accent">
+            save
+        </mat-icon>
+    </button>
+    <button mat-icon-button color="primary"
+            matTooltip="Удалить"
+            (click)="cancelCreateRoom()" >
+        <i class="material-icons" >edit_calendar</i>
+        &lt;!&ndash;<mat-icon color="accent">
+            undo
+        </mat-icon>&ndash;&gt;
+    </button>
+</div>-->

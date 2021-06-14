@@ -15,9 +15,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/students',  title: 'Ученики',        icon: 'face', class: '' },
     { path: '/timetable', title: 'Расписание',     icon: 'pending_actions', class: '' },
     { path: '/groups',    title: 'Группы(классы)', icon: 'groups', class: '' },
-    { path: '/subjects',  title: 'Предметы',       icon: 'import_contacts', class: '' },
-    { path: '/grades',    title: 'Типы оценок',    icon: 'filter_5', class: '' },
-    { path: '/rooms',     title: 'Кабинеты',       icon: 'meeting_room', class: '' }
+    { path: '/subject',  title: 'Предметы',       icon: 'import_contacts', class: '' },
+    { path: '/grade',    title: 'Типы оценок',    icon: 'filter_5', class: '' },
+    { path: '/room',     title: 'Кабинеты',       icon: 'meeting_room', class: '' }
     // { path: '/user-profile', title: 'User Profile',  icon: 'person', class: '' },
     // { path: '/table-list', title: 'Table List',  icon: 'content_paste', class: '' },
     // { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },

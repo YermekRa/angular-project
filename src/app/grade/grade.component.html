@@ -1,0 +1,159 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h3 class="card-title">Grade</h3>
+                <p class="card-category">Types of grade
+                </p>
+            </div>
+            <div class="card-body">
+                <mat-accordion>
+
+
+
+                    <mat-expansion-panel hideToggle *ngIf = "panelOpenState" >
+
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Adding new grade
+                            </mat-panel-title>
+                            <mat-panel-description>
+
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-form-field>
+                            <mat-label>Введите код оценки:</mat-label>
+                            <input matInput type="text" [(ngModel)]="gradeModel.code">
+
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Введите наименование оценки:</mat-label>
+                            <input matInput type="text" [(ngModel)]="gradeModel.longname">
+                        </mat-form-field>
+                        <div class="createGradeButton">
+
+                            <button mat-icon-button color="primary" (click)="saveGrade()">
+                                <i class="material-icons">save</i>
+                            </button>
+
+                            <!--<button mat-icon-button color="primary" (click)="cancelCreateGrade()">
+                                <i class="material-icons">undo</i>
+                            </button>-->
+                        </div>
+
+                    </mat-expansion-panel>
+
+                    <!--<button mat-raised-button color="primary"
+                            matTooltip="Создать"
+                            (click) = "createGrade()"
+                            *ngIf = "!panelOpenState">
+                        Add grade
+
+                    </button>-->
+
+
+
+                            <table mat-table [dataSource]="dataSource" class="table" [dataSource]="gradeModel">
+
+                                <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef> No.</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                                </ng-container>
+
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="code">
+                                    <th mat-header-cell *matHeaderCellDef> Оценка</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+                                </ng-container>
+
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef> Наименование</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.longname}} </td>
+                                </ng-container>
+
+
+
+                                <!--<ol>
+                                    <li>
+                                        <mat-form-field>
+                                            <mat-label>What's your name?</mat-label>
+&lt;!&ndash;                                            <input matInput [(ngModel)]="name">&ndash;&gt;
+                                        </mat-form-field>
+                                    </li>
+                                    <li>
+&lt;!&ndash;                                        <button mat-raised-button (click)="openDialog()">Pick one</button>&ndash;&gt;
+                                    </li>
+&lt;!&ndash;                                    <li *ngIf="animal">&ndash;&gt;
+&lt;!&ndash;                                        You chose: <i>{{animal}}</i>&ndash;&gt;
+&lt;!&ndash;                                    </li>&ndash;&gt;
+                                </ol>-->
+
+                                <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef> Actions</th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <button mat-icon-button color="primary"
+                                                matTooltip="Редактировать"
+                                                (click)="onCorrect(element)" >
+                                            <i class="material-icons">create</i>
+                                            <!--<mat-icon color="accent">
+                                                Icon font
+                                            </mat-icon>-->
+                                        </button>
+                                        <button mat-icon-button color="primary"
+                                                matTooltip="Удалить"
+                                                (click)="deleteGrade(element.id)" >
+                                            <i class="material-icons">clear</i>
+                                            <!--<mat-icon color="accent">
+                                                `Icon font`
+                                            </mat-icon>-->
+                                        </button>
+
+                                    </td>
+                                </ng-container>
+
+
+
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+
+
+
+                </mat-accordion>
+
+                <!--<form class="example-form">
+
+                        <mat-form-field>
+                            <mat-label>Code</mat-label>
+                            <input matInput type="text" [(ngModel)]="gradeModel.code">
+
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput type="text" [(ngModel)]="gradeModel.name">
+                        </mat-form-field>
+                    <button mat-flat-button color="primary" (click)="createGrade()">Add</button>
+                </form>-->
+
+                <!--<div>
+                    <button mat-icon-button
+
+                            matTooltip="Создать">
+                        <i class="material-icons">add_circle_outline</i>
+                        &lt;!&ndash;<mat-icon color="accent">
+                            Icon font
+                        </mat-icon>&ndash;&gt;
+                    </button>
+                </div>-->
+
+            </div>
+        </div>
+    </div>
+</div>

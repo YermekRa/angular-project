@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">Редактирование оценки</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field>
+            <mat-label>Код оценки</mat-label>
+            <input matInput type="text" [(ngModel)]="data.code">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Наименование</mat-label>
+            <input matInput type="text" [(ngModel)]="data.longname">
+        </mat-form-field>
+
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="saveGrade()" class="btn btn-danger pull-right"
+                [mat-dialog-close]="true">Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+</div>
+
+
+<!--
+
+<div>
+    <mat-form-field >
+        <p>Код оценки </p>
+        <mat-label>Code</mat-label>
+        <input matInput type="text" [(ngModel)]="data.code">
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <p>Наименование</p>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [(ngModel)]="data.name">
+    </mat-form-field>
+
+    <button mat-icon-button color="primary"
+            matTooltip="Редактировать"
+            (click)="saveGrade()" >
+        &lt;!&ndash;<i class="material-icons">save</i>&ndash;&gt;
+        <mat-icon color="accent">
+            save
+        </mat-icon>
+    </button>
+    <button mat-icon-button color="primary"
+            matTooltip="Удалить"
+            (click)="cancelCreateGrade()" >
+
+        <mat-icon color="accent">
+            undo
+        </mat-icon>
+    </button>
+</div>
+-->

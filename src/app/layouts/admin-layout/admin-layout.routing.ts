@@ -16,6 +16,9 @@ import {UsersControlComponent} from '../../users-control/users-control.component
 import {TimetableComponent} from '../../timetable/timetable.component';
 import {GroupsComponent} from '../../groups/groups.component';
 import {PageableDemoUsersComponent} from '../../pageable-demo-users/pageable-demo-users.component';
+import {GradeComponent} from '../../grade/grade.component';
+import {RoomComponent} from '../../room/room.component';
+import {SubjectComponent} from '../../subject/subject.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -74,6 +77,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'teachers',       component: TeachersComponent },
     { path: 'students',       component: StudentsComponent },
     { path: 'timetable',      component: TimetableComponent },
-    { path: 'demo-pageable',      component: PageableDemoUsersComponent },
+    { path: 'demo-pageable',  component: PageableDemoUsersComponent },
     { path: 'groups',         component: GroupsComponent },
+    { path: 'grade',          component: GradeComponent },
+    { path: 'room',           component: RoomComponent },
+    { path: 'subject',        component: SubjectComponent }
 ];

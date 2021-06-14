@@ -46,6 +46,12 @@ import { EditGroupsDialogComponent } from './groups/edit-groups-dialog/edit-grou
 import { DialogRolesComponent } from './roles/dialog-roles/dialog-roles.component';
 import {AuthPageComponent} from './components/containers/auth-page/auth-page/auth-page.component';
 import {AuthInterceptor} from './service/auth.interceptor';
+import {GradeComponent} from './grade/grade.component';
+import {RoomComponent} from './room/room.component';
+import {SubjectComponent} from './subject/subject.component';
+import {EditFormComponent} from './grade/edit-form/edit-form.component';
+import {EditFormRoomComponent} from './room/edit-form-room/edit-form-room.component';
+import {EditFromSubjectComponent} from './subject/edit-from-subject/edit-from-subject.component';
 
 
 @NgModule({
@@ -81,7 +87,13 @@ import {AuthInterceptor} from './service/auth.interceptor';
         EditStudentDialogComponent,
         EditTimetableDialogComponent,
         EditGroupsDialogComponent,
-        DialogRolesComponent
+        DialogRolesComponent,
+        GradeComponent,
+        RoomComponent,
+        SubjectComponent,
+        EditFormComponent,
+        EditFormRoomComponent,
+        EditFromSubjectComponent
     ],
     providers: [  {
         provide: HTTP_INTERCEPTORS,
